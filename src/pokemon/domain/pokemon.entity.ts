@@ -9,6 +9,6 @@ interface Name {
     name: string;
 }
 
-interface Move extends Name {}
+export interface Move extends Name {}
 
-interface Type extends Name {}
+export interface Type extends Name {}
