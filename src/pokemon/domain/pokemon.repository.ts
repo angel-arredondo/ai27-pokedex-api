@@ -1,8 +1,7 @@
 import { PokemonEntity } from "./pokemon.entity";
 
 export interface PokemonRepository {
-    savePokemonByName(name:string):Promise<PokemonEntity | null>;
-    deletePokemonById(id:string):Promise<Response>;
-    deletePokemonByName(name:string):Promise<Response>;
-    listPokemon():Promise<PokemonEntity[] | null>;
+    registerPokemon(pokemon:PokemonEntity): Promise<PokemonEntity | null>;
+    deletePokemon(pokemon:PokemonEntity): Promise<Response>;
+    listPokemon(): Promise<PokemonEntity[] | null>;
 }
