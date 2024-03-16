@@ -1,0 +1,21 @@
+{
+  "name": "ai27-pokedex-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "co": "sui-mono commit",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Angel Arredondo Castanos <castanios.dev@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@s-ui/mono": "2.45.0",
+    "typescript": "5.4.2"
+  },
+  "dependencies": {
+    "express": "4.18.3"
+  }
+}
