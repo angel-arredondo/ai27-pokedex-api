@@ -1,5 +1,5 @@
 export interface PokemonEntity {
-    uuid: string;
+    id: string;
     name: string;
     moves: Move[];
     types: Type[];
