@@ -1,20 +1,27 @@
 
-export class FetchError extends Error{
+export class FetchError extends Error {
     constructor(message:string){
         super(message)
         this.name = 'FetchError'
     }
 }
-export class DatabaseError extends Error{
+export class DatabaseError extends Error {
     constructor(message:string){
         super(message)
         this.name = 'DatabaseError'
     }
 }
 
-export class PokeApiError extends Error{
+export class PokeApiError extends Error {
     constructor(message:string){
         super(message)
         this.name = 'PokeApiError'
+    }
+}
+
+export class ErrorCors extends Error {
+    constructor(message:string){
+        super(message)
+        this.name = 'ErrorCors'
     }
 }

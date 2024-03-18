@@ -10,13 +10,12 @@ export class PokemonUseCase {
         moves, 
         types
     }: Omit<PokemonEntity,"id">) {
-        //console.log("fromUseCase PokemonRegistration params", {name,moves,types});
         const pokemonValue = new PokemonValue({
             name,
             moves,
             types
         });
-        //console.log("fromUseCase PokemonRegistration to save", pokemonValue);
+        
         const createdPokemon = await this.pokemonRepository
             .registerPokemon(pokemonValue);
         

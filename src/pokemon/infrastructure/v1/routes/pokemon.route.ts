@@ -4,7 +4,7 @@ import { PokemonController } from "../../controller/pokemon.controller";
 import { MongoRepository } from "../../repository/mongo.repository";
 import { Validation } from "../../utils/validation";
 
-const URL_ROUTE = '/api/v1/pokemon/'
+const URL_ROUTE = '/api/v1/pokemons/'
 
 const route = Router()
 

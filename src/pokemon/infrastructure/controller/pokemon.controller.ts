@@ -48,7 +48,6 @@ export class PokemonController {
       );
       res.status(201).send({ registeredPokemon });
     } catch (e: unknown) {
-      console.log(e);
       if (e instanceof Error) {
         const errorHandler =
           this.ERRORS_HANDLING[e.name as keyof typeof this.ERRORS_HANDLING];
