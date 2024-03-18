@@ -4,9 +4,12 @@ import cors from 'express'
 import pokemonRoute from './infrastructure/v1/routes/pokemon.route'
 import dotenv from 'dotenv'
 import initDatabase from './infrastructure/databases/mongo.database'
+import helmet from 'helmet'
+
 dotenv.config()
 
-const app= express()
+const app = express()
+app.use(helmet())
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
