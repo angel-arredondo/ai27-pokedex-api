@@ -5,21 +5,16 @@ import { DatabaseError } from "../utils/error.classes";
 import { v4 as uuid } from "uuid";
 import { getDbModel } from "../databases/jf.database";
 import data from '../data/db.json'
-import testConstant from "../constants/tests";
-import fs from 'fs/promises'
-
 
 export class JfRepository implements PokemonRepository {
   async registerPokemon(pokemon: PokemonEntity): Promise<PokemonEntity | null> {
-    try {
-     
+    try {   
       const pokemonToCreate = data.pokemons.find(
         (p:PokemonEntity)=>p.name === pokemon.name
       )
       if(pokemonToCreate)
         return pokemonToCreate;
-      if(process.env.TEST_WORKER_INDEX)
-        return testConstant.pokemon;
+      
       const pokemons = getDbModel();
       pokemon.id = uuid();
       
@@ -36,8 +31,6 @@ export class JfRepository implements PokemonRepository {
   }
   async deletePokemonById(id: string): Promise<number> {
     try{
-      if(process.env.TEST_WORKER_INDEX)
-        return 1;
       const pokemons = getDbModel();
       pokemons.remove({ id })
       return 1;
@@ -51,8 +44,6 @@ export class JfRepository implements PokemonRepository {
   }
   async deletePokemonByName(name: string): Promise<number> {
     try{
-      if(process.env.TEST_WORKER_INDEX)
-        return 1;
       const pokemons = getDbModel();
       const pokemon = data.pokemons.find((p:PokemonEntity)=>p.name === name)
       if(!pokemon) return 0;
@@ -68,11 +59,6 @@ export class JfRepository implements PokemonRepository {
   }
   listPokemon(): PokemonEntity[] | null {
     try{
-      
-      if(process.env.TEST_WORKER_INDEX){        
-        return [testConstant.pokemon];
-      }
-        
       const pokemons = getDbModel();
       return Array.from(pokemons)
     }catch(e){

@@ -1,10 +1,8 @@
-
-
-
-# Pokedex API 
+# Pokedex API
 
 An API to manage your pokemons like pokedex
->  ℹ️ Development status is Alpha
+
+> ℹ️ Development status is Alpha
 
 ## Base URL 🔗
 
@@ -15,10 +13,13 @@ http://localhost:3000/
 ## Security 🔒
 
 #### Use of Helmet
+
 Helmet.js is middleware-based technology that improves security by safeguarding HTTP headers returned by a Node.js app
+
 #### Helmet protections
+
 - XSS attacks
-- Content Security 
+- Content Security
 - Policy vulnerabilities
 - Other security issues.
 
@@ -27,7 +28,6 @@ Helmet.js is middleware-based technology that improves security by safeguarding 
 ### `GET /pokemons`
 
 Description of what this endpoint does.
-
 
 #### Request Example
 
@@ -40,34 +40,19 @@ Host: http://localhost:3000
 
 ```json
 {
-    "pokemons": [
-      {
-           "id": "5386324c-d611-436a-b76c-36ecce753a07",
-           "name": "pidgeotto",
-           "moves": [
-               {
-                   "name": "razor-wind"
-               },
-               {
-                   "name": "gust"
-               },
-               {
-                   "name": "wing-attack"
-               },
-               {
-                   "name": "whirlwind"
-               }
-           ],
-           "types": [
-               {
-                   "name": "normal"
-               },
-               {
-                   "name": "flying"
-               }
-           ]
-       }
-   ]
+  "pokemons": [
+    {
+      "id": "5386324c-d611-436a-b76c-36ecce753a07",
+      "name": "pidgeotto",
+      "moves": [
+        { "name": "razor-wind" },
+        { "name": "gust" },
+        { "name": "wing-attack" },
+        { "name": "whirlwind" }
+      ],
+      "types": [{ "name": "normal" }, { "name": "flying" }]
+    }
+  ]
 }
 ```
 
@@ -97,32 +82,32 @@ Content-Type: application/json
 
 ```json
 {
-    "registeredPokemon": {
-        "id": "5386324c-d611-436a-b76c-36ecce753a07",
-        "name": "pidgeotto",
-        "moves": [
-            {
-                "name": "razor-wind"
-            },
-            {
-                "name": "gust"
-            },
-            {
-                "name": "wing-attack"
-            },
-            {
-                "name": "whirlwind"
-            }
-        ],
-        "types": [
-            {
-                "name": "normal"
-            },
-            {
-                "name": "flying"
-            }
-        ]
-    }
+  "registeredPokemon": {
+    "id": "5386324c-d611-436a-b76c-36ecce753a07",
+    "name": "pidgeotto",
+    "moves": [
+      {
+        "name": "razor-wind"
+      },
+      {
+        "name": "gust"
+      },
+      {
+        "name": "wing-attack"
+      },
+      {
+        "name": "whirlwind"
+      }
+    ],
+    "types": [
+      {
+        "name": "normal"
+      },
+      {
+        "name": "flying"
+      }
+    ]
+  }
 }
 ```
 
@@ -151,7 +136,6 @@ Content-Type: application/json
 #### Response
 
 ```json
-
 {
   "deletedCount": 1
 }
@@ -164,19 +148,43 @@ Content-Type: application/json
 - `500 Internal Server Error`: Server error.
 
 ## Running test ✅
+
 In order to run automated tests execute this two steps:
+
 ```console
-npm run start:dev
+npm run start:test
 ```
-finally
+
+Finally
+
 ```console
 npm run test
 ```
+You should get something like this:
+```batch
+➜ npm run test
+
+> ai27-pokedex-api@0.0.1 test
+> pnpm exec playwright test --project=Chromium
+
+
+Running 8 tests using 8 workers
+  8 passed (774ms)
+
+To open last HTML report run:
+
+  pnpm exec playwright show-report
+```
+
+
 ## Build project ⚡
+
 Build the project for production by the command:
+
 ```console
 npm run start:prod
 ```
+
 ## Error Handling 🚧
 
 Custom errors were creates to manage database, fetch, cors and PokeApi errors
@@ -201,37 +209,56 @@ Using custom errors in JavaScript can offer several benefits:
 - **Extensibility**: Custom errors can be extended or subclassed to create hierarchies of related error types. This allows for a more flexible and extensible error handling approach, accommodating evolving requirements and error scenarios.
 
 - **Documentation and Self-Explanatory Code**: Well-defined custom errors serve as self-documenting elements of your code. They convey important information about potential errors and their contexts, making the codebase more understandable for developers who maintain or interact with it in the future.
+
 #### Custom error example
+
 ```typescript
 export class FetchError extends Error {
-    constructor(message:string){
-        super(message)
-        this.name = 'FetchError'
-    }
+  constructor(message: string) {
+    super(message);
+    this.name = "FetchError";
+  }
 }
 ```
 
 ## Versioning 📋
 
 This api starts at version V1
+
 ```http
  /api/v1/pokemons/pidgeotto HTTP/1.1
 ```
+
 ## Dependencies 🌐
+
 #### CORS
-Middleware that manages ```Cross-Origin-Resource-Sharing``` sets a site origin list allowed to consume the API
+
+Middleware that manages `Cross-Origin-Resource-Sharing` sets a site origin list allowed to consume the API
+
 #### dotenv
- Loads environment variables from a ```.env``` file into ```process.env```. Storing configuration in the environment separate from code.
+
+Loads environment variables from a `.env` file into `process.env`. Storing configuration in the environment separate from code.
+
 #### Express JS
+
 Framework to serve API routes, Express.js is often chosen for its simplicity, flexibility, and performance, making it a popular choice for building web applications and APIs with Node.js.
+
 #### express-validator
+
 It allows you to combine them in many ways so that you can validate and sanitize your express requests, and offers tools to determine if the request is valid or not, which data was matched according to your validators, etc.
+
 #### helmet
-Helps enhance the security of web applications by setting various HTTP headers to mitigate common security vulnerabilities. 
+
+Helps enhance the security of web applications by setting various HTTP headers to mitigate common security vulnerabilities.
+
 #### mongoose
+
 Mongoose is an Object Data Modeling (ODM) library for MongoDB, designed to work in an asynchronous environment. MongoDB is a NoSQL database that stores data in flexible, JSON-like documents
+
 #### uuid
+
 Generates uuid v4 in order to asign pokemon ids
+
 ## Architecture 👷‍♂️
 
 Architecture used for this API is Clean Architecture
@@ -257,7 +284,9 @@ Clean architecture, popularized by Robert C. Martin (Uncle Bob), emphasizes stru
 In summary, clean architecture offers numerous benefits that contribute to the long-term success and sustainability of software projects, including improved maintainability, testability, scalability, flexibility, and collaboration, among others.
 
 ## Design patterns👷
+
 #### Repository
+
 Repository pattern was used to concentrate methods in the pokemon repository class, the Repository Pattern is a design pattern commonly used in software development, particularly in applications that interact with databases or external data sources. It aims to abstract the data access logic from the rest of the application, providing a separation of concerns and promoting a more modular, maintainable codebase.
 Key concepts and components of the Repository Pattern include:
 
@@ -276,6 +305,7 @@ Key concepts and components of the Repository Pattern include:
 - **Flexibility and Scalability**: The use of the Repository Pattern allows for flexibility and scalability in the application architecture. Developers can easily swap out different repository implementations (e.g., for different database systems) or introduce caching and optimization strategies without impacting the rest of the application.
 
 #### Interactor
+
 Interactor pattern was used to encapsulate pokemon use cases, the Interactor Pattern is used to encapsulate and represent the application-specific business logic and use cases.
 
 The Interactor Pattern, also known simply as the Interactor, is a design pattern commonly used in software development, particularly in applications that follow Clean Architecture or similar architectural styles. The Interactor Pattern is used to encapsulate and represent the application-specific business logic and use cases.
@@ -293,3 +323,117 @@ Key characteristics and components of the Interactor Pattern:
 - **Testability**: The Interactor Pattern promotes testability by isolating the application's business logic from external dependencies. Interactors can be easily unit tested in isolation, using mock objects or test doubles to simulate interactions with collaborators such as domain objects, repositories, or external services.
 
 - **Promotion of Clean Architecture**: The Interactor Pattern is closely associated with Clean Architecture and similar architectural styles that emphasize separation of concerns and dependency inversion. Interactors serve as the bridge between the application's core business logic and the external world, ensuring that business rules are decoupled from infrastructure concerns and presentation details.
+
+## Code refactor 🔁
+
+Unit test code was refactored to improve legibility and maintenance by setting and getting constants in a centralized way
+
+##### Before
+
+```typescript
+test.describe("Testing at pokemon routes", () => {
+  test.describe("Testing POST endpoint", () => {
+    test("Should respond status 201", async ({ request }) => {
+      const response = await request.post(
+        "http://localhost:3000/api/v1/pokemons/pidgeotto"
+      );
+
+      expect(response.status()).toBe(201);
+    });
+    test("Should return the created pokemon", async ({ request }) => {
+      const response = await request.post(
+        "http://localhost:3000/api/v1/pokemons/pidgeotto"
+      );
+      const json = await response.json();
+
+      expect(json).toBeDefined();
+      expect(json.registeredPokemon.name).toBe("pidgeotto");
+    });
+    test("Should respond status 404 width no pokemon name", async ({
+      request,
+    }) => {
+      const response = await request.post(
+        "http://localhost:3000/api/v1/pokemons/"
+      );
+      expect(response.status()).toBe(404);
+    });
+    test("Should respond status 400 width invalid pokemon name", async ({
+      request,
+    }) => {
+      const response = await request.post(
+        "http://localhost:3000/api/v1/pokemons/4568"
+      );
+      expect(response.status()).toBe(400);
+    });
+  });
+  test.describe("Testing GET endpoint", () => {
+    test("Should respond status 200", async ({ request }) => {
+      const response = await request.get(
+        "http://localhost:3000/api/v1/pokemons/"
+      );
+      expect(response.status()).toBe(200);
+    });
+    test("Should respond whit pokemons", async ({ request }) => {
+      const response = await request.get(
+        "http://localhost:3000/api/v1/pokemons/"
+      );
+      const json = await response.json();
+
+      expect(json.pokemons).toBeDefined();
+      expect(json.pokemons).toHaveLength(1);
+    });
+  });
+});
+```
+
+#### After
+
+```typescript
+test.describe("Testing at pokemon routes", () => {
+  test.describe("Testing POST endpoint", () => {
+    test("Should respond status 201", async ({ request }) => {
+      const response = await request.post(
+        `${testConstant.endpoint.pokemons}${testConstant.pokemon.name}`
+      );
+
+      expect(response.status()).toBe(201);
+    });
+    test("Should return the created pokemon", async ({ request }) => {
+      const response = await request.post(
+        `${testConstant.endpoint.pokemons}${testConstant.pokemon.name}`
+      );
+      const json = await response.json();
+
+      expect(json).toBeDefined();
+      expect(json.registeredPokemon.name).toBe("pidgeotto");
+    });
+    test("Should respond status 404 width no pokemon name", async ({
+      request,
+    }) => {
+      const response = await request.post(testConstant.endpoint.pokemons);
+      expect(response.status()).toBe(404);
+    });
+    test("Should respond status 400 width invalid pokemon name", async ({
+      request,
+    }) => {
+      const response = await request.post(
+        `${testConstant.endpoint.pokemons}4568`
+      );
+      expect(response.status()).toBe(400);
+    });
+  });
+  test.describe("Testing GET endpoint", () => {
+    test("Should respond status 200", async ({ request }) => {
+      const response = await request.get(testConstant.endpoint.pokemons);
+      expect(response.status()).toBe(200);
+    });
+    test("Should respond whit pokemons", async ({ request }) => {
+      const response = await request.get(testConstant.endpoint.pokemons);
+      const json = await response.json();
+
+      expect(json.pokemons).toBeDefined();
+      expect(json.pokemons).toHaveLength(1);
+    });
+  });
+});
+```

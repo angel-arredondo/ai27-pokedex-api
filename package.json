@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start:dev": "ts-node-dev src/pokemon/server.jflocal.ts",
+    "start:test": "ts-node-dev src/pokemon/server.testing.ts",
     "test": "pnpm exec playwright test --project=Chromium",   
     "start:prod": "node build/pokemon/server.mongo.js"
   },
