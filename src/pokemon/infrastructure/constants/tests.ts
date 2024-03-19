@@ -12,6 +12,9 @@ const testConstant = Object.freeze({
             {name:"normal"},
             {name:"flying"}
         ]
+    },
+    endpoint:{
+        pokemons:'http://localhost:3000/api/v1/pokemons/'
     }
 })
 
