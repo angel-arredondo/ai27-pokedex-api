@@ -1,0 +1,12 @@
+node_modules
+pnpm-lock.yaml
+.env
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+*.spec.js
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
