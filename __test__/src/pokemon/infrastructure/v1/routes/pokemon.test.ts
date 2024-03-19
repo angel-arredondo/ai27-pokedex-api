@@ -3,7 +3,8 @@ import testConstant from "../../../../../../src/pokemon/infrastructure/constants
 
 test.describe("Testing at pokemon routes", () => {
   test.describe("Testing POST endpoint", () => {
-    test("Should respond status 201", async ({ request }) => {
+    
+    test("Should respond status 201", async ({ request }) => { 
       const response = await request.post(
         `${testConstant.endpoint.pokemons}${testConstant.pokemon.name}`
       );
@@ -39,7 +40,7 @@ test.describe("Testing at pokemon routes", () => {
       const response = await request.get(testConstant.endpoint.pokemons);
       expect(response.status()).toBe(200);
     });
-    test("Should respond whit pokemons", async ({ request }) => {
+    test("Should respond with pokemons", async ({ request }) => {
       const response = await request.get(testConstant.endpoint.pokemons);
       const json = await response.json();
 
