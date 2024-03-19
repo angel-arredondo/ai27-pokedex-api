@@ -152,14 +152,30 @@ Content-Type: application/json
 In order to run automated tests execute this two steps:
 
 ```console
-npm run start:dev
+npm run start:test
 ```
 
-finally
+Finally
 
 ```console
 npm run test
 ```
+You should get something like this:
+```batch
+➜ npm run test
+
+> ai27-pokedex-api@0.0.1 test
+> pnpm exec playwright test --project=Chromium
+
+
+Running 8 tests using 8 workers
+  8 passed (774ms)
+
+To open last HTML report run:
+
+  pnpm exec playwright show-report
+```
+
 
 ## Build project ⚡
 
