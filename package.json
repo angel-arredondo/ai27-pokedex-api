@@ -4,19 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc",
-    "dev": "ts-node-dev src/pokemon/pokemon.app.ts",
-    "start": "node build/pokemon.app.js",
-    "co": "sui-mono commit",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start:dev": "ts-node-dev src/pokemon/server.jflocal.ts",
+    "test": "pnpm exec playwright test --project=Chromium",   
+    "start:prod": "node build/pokemon/server.mongo.js"
   },
   "keywords": [],
   "author": "Angel Arredondo Castanos <castanios.dev@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@playwright/test": "^1.42.1",
     "@types/cors": "2.8.17",
     "@types/express": "4.17.21",
+    "@types/node": "20.11.28",
     "@types/uuid": "9.0.8",
+    "json-file-database": "2.0.3",
     "ts-node-dev": "2.0.0",
     "typescript": "5.4.2"
   },

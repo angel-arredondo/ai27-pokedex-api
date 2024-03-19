@@ -6,7 +6,7 @@ const NameSchema = new Schema({
 
 const PokemonSchema = new Schema({
     _id: String,
-    name:{ type: String },
+    name:{ type: String, unique:true },
     moves:[NameSchema],
     types:[NameSchema]
 },{ versionKey:false })

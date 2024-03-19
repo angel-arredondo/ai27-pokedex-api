@@ -37,7 +37,7 @@ export class PokemonController {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      res.status(400).send({ errors: errors.array() });
+      return res.status(400).send({ errors: errors.array() });
     }
     const { name } = req.params;
 
@@ -48,6 +48,7 @@ export class PokemonController {
       );
       res.status(201).send({ registeredPokemon });
     } catch (e: unknown) {
+        
       if (e instanceof Error) {
         const errorHandler =
           this.ERRORS_HANDLING[e.name as keyof typeof this.ERRORS_HANDLING];
@@ -72,8 +73,9 @@ export class PokemonController {
       const deletedCount = isIdentifierId
         ? await this.pokemonUseCase.deletePokemonById(identifier)
         : await this.pokemonUseCase.deletePokemonByName(identifier);
-      res.status(201).send({ deletedCount });
+      res.status(200).send({ deletedCount });
     } catch (e) {
+        console.log(e)
       if (e instanceof Error) {
         const errorHandler =
           this.ERRORS_HANDLING[e.name as keyof typeof this.ERRORS_HANDLING];
