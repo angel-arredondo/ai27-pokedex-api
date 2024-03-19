@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "8f672517-1865-4ac2-a87c-70e1ad0f92dd",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33660842"
+	},
+	"item": [
+		{
+			"name": "delete pokemon by name",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/pokemons/pidgeotto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"pokemons",
+						"pidgeotto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create pokemon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/pokemons/pidgeotto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"pokemons",
+						"pidgeotto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete pokemon by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/pokemons/eaa79fae-7db3-4648-9f45-7832ddc26e0d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"pokemons",
+						"eaa79fae-7db3-4648-9f45-7832ddc26e0d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
